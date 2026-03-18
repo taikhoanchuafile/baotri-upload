@@ -1,28 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website download của Nguyễn Tuấn Vũ</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Hub</title>
+  <link rel="stylesheet" href="style.css">
+    <script src="./index.js" defer></script>
 </head>
 <body>
-    <header style="text-align: center;">
-        <h1>Website dùng để tải các ứng dụng cần thiết phục vụ cho tác giả thôi</h1>
-        <p>nên đừng kỳ vọng gì quá siêu nha</p>
-    </header>
-    <main>
-        <nav>
-            <ol type="1">
-                <li>Tool bảo trì -
-                <a href="./Bảo trì Máy By Nguyễn Tuấn Vũ - MNT có Pass.exe" download="">ấn vào để tải</a>
-                </li>
-                
-            </ol>
-        </nav>
-    </main>
-    <footer>
-        @NTV - Nguyễn Tuấn Vũ
-    </footer>
+
+  <!-- Cursor glow -->
+  <div class="cursor"></div>
+
+  <!-- Background -->
+  <div class="bg"></div>
+
+  <div class="container">
+    <h1 class="title">
+      Đây là website phục vụ download cho tác giả nên đừng mong nó xịn hơn 😄
+    </h1>
+
+    <!-- Search -->
+    <input 
+      type="text" 
+      id="search" 
+      placeholder="🔍 Tìm file..." 
+      onkeyup="searchFile()"
+    />
+
+    <div class="file-list">
+
+      <div class="file">
+        <div class="left">
+          <span class="icon">📦</span>
+          <div class="info">
+            <span class="name">setup.zip</span>
+            <span class="size">20MB</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button onclick="copyLink(`https://drive.google.com/file/d/1zpmoYtlRIvPynFRKr7SWL3OSv9p0rdZY/view?usp=drive_link`)" class="ripple">📋</button>
+          <a href="./BTMT-PASS.exe" download class="ripple">⬇</a>
+        </div>
+      </div>
+
+      <!-- <div class="file">
+        <div class="left">
+          <span class="icon">📄</span>
+          <div class="info">
+            <span class="name">report.pdf</span>
+            <span class="size">2MB</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button onclick="copyLink('files/report.pdf')" class="ripple">📋</button>
+          <a href="files/report.pdf" download class="ripple">⬇</a>
+        </div>
+      </div> -->
+
+    </div>
+
+    <div class="footer">
+      @NTV - Nguyễn Tuấn Vũ
+    </div>
+  </div>
+
+
+
 </body>
 </html>
