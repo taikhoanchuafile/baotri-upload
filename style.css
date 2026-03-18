@@ -52,6 +52,7 @@ body {
   font-size: 26px;
   background: linear-gradient(90deg, cyan, #ff00cc);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: glowText 2s infinite alternate;
 }
