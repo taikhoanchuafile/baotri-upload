@@ -1,28 +1,34 @@
-/* Search */
-function searchFile() {
-  const input = document.getElementById("search").value.toLowerCase();
-  const files = document.querySelectorAll(".file");
-
-  files.forEach(file => {
-    const name = file.innerText.toLowerCase();
-    file.style.display = name.includes(input) ? "flex" : "none";
-  });
-}
-
-/* Copy */
-function copyLink(link) {
-  navigator.clipboard.writeText(link);
-  alert("Đã copy link!");
-}
-
-/* Cursor glow */
+// Cursor glow
 const cursor = document.querySelector(".cursor");
-document.addEventListener("mousemove", e => {
+
+document.addEventListener("mousemove", (e) => {
   cursor.style.top = e.clientY + "px";
   cursor.style.left = e.clientX + "px";
 });
 
-/* Ripple effect */
+// Search
+const searchInput = document.getElementById("search");
+
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value.toLowerCase();
+  const files = document.querySelectorAll(".file");
+
+  files.forEach(file => {
+    const text = file.innerText.toLowerCase();
+    file.style.display = text.includes(value) ? "flex" : "none";
+  });
+});
+
+// Copy link
+document.querySelectorAll(".actions button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const link = btn.getAttribute("data-link");
+    navigator.clipboard.writeText(link);
+    alert("Đã copy link!");
+  });
+});
+
+// Ripple effect
 document.querySelectorAll(".ripple").forEach(btn => {
   btn.addEventListener("click", function(e) {
     const circle = document.createElement("span");
@@ -38,7 +44,7 @@ document.querySelectorAll(".ripple").forEach(btn => {
   });
 });
 
-/* Load animation */
+// Load animation
 window.addEventListener("load", () => {
   document.querySelectorAll(".file").forEach((el, i) => {
     setTimeout(() => {
