@@ -25,6 +25,28 @@
 
     animation: titleGradient 8s linear infinite;
 }
+
+.footer {
+  text-align: center;
+  font-size: 34px;
+    font-weight: 800;
+
+    background: linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed,
+        #06b6d4,
+        #2563eb
+    );
+
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: titleGradient 8s linear infinite;
+}
 /* SEARCH */
 #search {
     width: 100%;
