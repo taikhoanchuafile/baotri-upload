@@ -1,0 +1,11 @@
+win: powershell (Get-WmiObject -query 'select * from SoftwareLicensingService').OA3xOriginalProductKey
+
+office: 
+
+cscript "C:\Program Files\Microsoft Office\root\Office16\OSPP.VBS" /dstatusall
+
+cd "C:\Program Files (x86)\Microsoft Office\Office16"
+cscript ospp.vbs /dstatus
+
+cd "C:\Program Files\Microsoft Office\Office16"
+cscript ospp.vbs /dstatus
